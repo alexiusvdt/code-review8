@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ToDoList.Models;
+using BakeryOrders.Models;
 using System.Collections.Generic;
 using System;
 
-namespace ToDoList.Tests
+namespace BakeryOrders.Tests
 {
 
   [TestClass]
   //idisposable extends itemtest class and provides the interface for clearing between tests
-  public class ItemTests : IDisposable
+  public class OrderTests : IDisposable
   {
     public void Dispose()
     {
