@@ -28,7 +28,7 @@ namespace BakeryOrders.Tests
       string details = "Seven items, 400$";
       Order newOrder = new Order(details);
       string result = newOrder.Details;
-      Assert.AreEqual(description, result);
+      Assert.AreEqual(details, result);
     }
 
     // [TestMethod]
