@@ -13,10 +13,10 @@ namespace BakeryOrders.Controllers
       return View();
     }
 
-    [HttpGet("/categories")]
+    [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendors> allVendors = Vendors.GetAll();
+      List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
 
