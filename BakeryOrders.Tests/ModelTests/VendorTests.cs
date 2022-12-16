@@ -57,37 +57,34 @@ namespace BakeryOrders.Tests
       CollectionAssert.AreEqual(newList, result);
     }    
 
-  //   [TestMethod]
-  //   public void Find_ReturnsCorrectVendor_Vendor()
-  //   {
-  //     //Arrange
-  //     string name01 = "Work";
-  //     string name02 = "School";
-  //     Vendor newVendor1 = new Vendor(name01);
-  //     Vendor newVendor2 = new Vendor(name02);
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string name1 = "Margot's Marketplace";
+      string description1 = "Cafe and Market";
+      string name2 = "Teddy's Taqueria";
+      string description2 = "Food Cart";
+      Vendor newVendor1 = new Vendor(name1, description1);
+      Vendor newVendor2 = new Vendor(name2, description2);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
+    }    
 
-  //     //Act
-  //     Vendor result = Vendor.Find(2);
-
-  //     //Assert
-  //     Assert.AreEqual(newVendor2, result);
-  //   }    
-  //   [TestMethod]
-  //   public void AddItem_AssociatesItemWithVendor_ItemList()
-  //   {
-  //     //Arrange
-  //     string description = "Walk the dog.";
-  //     Item newItem = new Item(description);
-  //     List<Item> newList = new List<Item> { newItem };
-  //     string name = "Work";
-  //     Vendor newVendor = new Vendor(name);
-  //     newVendor.AddItem(newItem);
-
-  //     //Act
-  //     List<Item> result = newVendor.Items;
-
-  //     //Assert
-  //     CollectionAssert.AreEqual(newList, result);
-    // }    
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string name = "Margot's Marketplace";
+      string description = "Cafe and Market";
+      Vendor newVendor = new Vendor(name, description);
+      string details = "50 loaves";
+      string title = "Margots market";
+      string date = "march 10";
+      decimal price = 40;
+      Order newOrder = new Order(title, details, date, price);
+      List<Order> newList = new List<Order> { newOrder };
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }    
   }
 }
