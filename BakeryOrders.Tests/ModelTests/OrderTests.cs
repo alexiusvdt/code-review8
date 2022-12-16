@@ -7,7 +7,7 @@ namespace BakeryOrders.Tests
 {
 
   [TestClass]
-  //idisposable extends itemtest class and provides the interface for clearing between tests
+  //idisposable extends Ordertest class and provides the interface for clearing between tests
   public class OrderTests 
   {
     // public void Dispose()
@@ -31,78 +31,74 @@ namespace BakeryOrders.Tests
       Assert.AreEqual(details, result);
     }
 
-    // [TestMethod]
-    // public void SetDescription_SetDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
+    [TestMethod]
+    public void SetDetails_SetDetails_String()
+    {
+      string details = "50 breads";
+      Order newOrder = new Order(details);
+      string updatedDetails = "20 pastries";
+      newOrder.Details = updatedDetails;
+      string result = newOrder.Details;
+      Assert.AreEqual(updatedDetails, result);
+    }
 
-    //   //Act
-    //   string updatedDescription = "Do the dishes";
-    //   newItem.Description = updatedDescription;
-    //   string result = newItem.Description;
-
-    //   //Assert
-    //   Assert.AreEqual(updatedDescription, result);
-    // }
     // [TestMethod]
-    // public void GetAll_ReturnsEmptyList_ItemList()
+    // public void GetAll_ReturnsEmptyList_OrderList()
     // {
     //   // Arrange
-    //   List<Item> newList = new List<Item> {};
+    //   List<Order> newList = new List<Order> {};
 
     //   // Act
-    //   List<Item> result = Item.GetAll();
+    //   List<Order> result = Order.GetAll();
 
     //   // Assert
     //   CollectionAssert.AreEqual(newList, result);
     // }
     // [TestMethod]
-    // public void GetAll_ReturnsItems_ItemList()
+    // public void GetAll_ReturnsOrders_OrderList()
     // {
     //   //Arrange
-    //   string description01 = "Walk the dog";
-    //   string description02 = "Wash the dishes";
-    //   Item newItem1 = new Item(description01);
-    //   Item newItem2 = new Item(description02);
-    //   List<Item> newList = new List<Item> { newItem1, newItem2 };
+    //   string Details01 = "Walk the dog";
+    //   string Details02 = "Wash the dishes";
+    //   Order newOrder1 = new Order(Details01);
+    //   Order newOrder2 = new Order(Details02);
+    //   List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
     //   //Act
-    //   List<Item> result = Item.GetAll();
+    //   List<Order> result = Order.GetAll();
 
     //   //Assert
     //   CollectionAssert.AreEqual(newList, result);
     // }
 
     // [TestMethod]
-    //   public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+    //   public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
     //   {
     //     //Arrange
-    //     string description = "Walk the dog.";
-    //     Item newItem = new Item(description);
+    //     string Details = "Walk the dog.";
+    //     Order newOrder = new Order(Details);
 
     //     //Act
-    //     int result = newItem.Id;
+    //     int result = newOrder.Id;
 
     //     //Assert
     //     Assert.AreEqual(1, result);
     //   }
       
     //   [TestMethod]
-    //   public void Find_ReturnsCorrectItem_Item()
+    //   public void Find_ReturnsCorrectOrder_Order()
     //   {
     //     //Arrange
-    //     string description01 = "Walk the dog";
-    //     string description02 = "Wash the dishes";
-    //     Item newItem1 = new Item(description01);
-    //     Item newItem2 = new Item(description02);
+    //     string Details01 = "Walk the dog";
+    //     string Details02 = "Wash the dishes";
+    //     Order newOrder1 = new Order(Details01);
+    //     Order newOrder2 = new Order(Details02);
 
     //     //Act
-    //     Item result = Item.Find(2);
+    //     Order result = Order.Find(2);
 
     //     //Assert
-    //     Assert.AreEqual(newItem2, result);
+    //     Assert.AreEqual(newOrder2, result);
     //   }
     }
 }
