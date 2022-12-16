@@ -80,19 +80,17 @@ namespace BakeryOrders.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    // [TestMethod]
-    //   public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
-    //   {
-    //     //Arrange
-    //     string Details = "Walk the dog.";
-    //     Order newOrder = new Order(Details);
-
-    //     //Act
-    //     int result = newOrder.Id;
-
-    //     //Assert
-    //     Assert.AreEqual(1, result);
-    //   }
+    [TestMethod]
+      public void GetId_InstantiatesIdAndReturns_Int()
+      {
+        string details = "50 loaves";
+        string title = "Margots market";
+        string date = "march 10";
+        decimal price = 40.18M;
+        Order newOrder = new Order(title, details, date, price);
+        int result = newOrder.Id;
+        Assert.AreEqual(1, result);
+      }
       
     //   [TestMethod]
     //   public void Find_ReturnsCorrectOrder_Order()
