@@ -20,7 +20,7 @@ namespace BakeryOrders.Controllers
       Vendor vendor = Vendor.Find(vendorId);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("order", order);
-      model.Add("Vendor", vendor);
+      model.Add("vendor", vendor);
       return View(model);
     }
   
