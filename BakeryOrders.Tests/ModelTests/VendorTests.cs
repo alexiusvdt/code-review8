@@ -6,13 +6,13 @@ using System;
 namespace BakeryOrders.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
-  //   //clear all instances between tests
-  //   public void Dispose()
-  //   {
-  //     Vendor.ClearAll();
-  //   }
+    //clear all instances between tests
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOf_Vendor()
@@ -22,7 +22,7 @@ namespace BakeryOrders.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+    public void CreatesNameAndDetails_String()
     {
       string name = "Margot's Marketplace";
       string description = "Cafe and Market";
@@ -33,19 +33,15 @@ namespace BakeryOrders.Tests
       Assert.AreEqual(description, result1);
     }
 
-  //   [TestMethod]
-  //   public void GetId_ReturnsVendorId_Int()
-  //   {
-  //     //Arrange
-  //     string name = "Test Vendor";
-  //     Vendor newVendor = new Vendor(name);
-
-  //     //Act
-  //     int result = newVendor.Id;
-
-  //     //Assert
-  //     Assert.AreEqual(1, result);
-  //   }   
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Margot's Marketplace";
+      string description = "Cafe and Market";
+      Vendor newVendor = new Vendor(name, description);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }   
 
   //   [TestMethod]
   //   public void GetAll_ReturnsAllVendorObjects_VendorList()
