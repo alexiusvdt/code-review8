@@ -22,19 +22,15 @@ namespace BakeryOrders.Tests
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
-    // [TestMethod]
-    // public void GetDescription_ReturnsDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
+    [TestMethod]
+    public void GetDetails_ReturnsDetails_String()
+    {
+      string details = "Seven items, 400$";
+      Order newOrder = new Order(details);
+      string result = newOrder.Details;
+      Assert.AreEqual(description, result);
+    }
 
-    //   //Act
-    //   string result = newItem.Description;
-
-    //   //Assert
-    //   Assert.AreEqual(description, result);
-    // }
     // [TestMethod]
     // public void SetDescription_SetDescription_String()
     // {
