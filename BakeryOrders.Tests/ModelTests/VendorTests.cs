@@ -21,19 +21,17 @@ namespace BakeryOrders.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
-  //   [TestMethod]
-  //   public void GetName_ReturnsName_String()
-  //   {
-  //     //Arrange
-  //     string name = "Test Vendor";
-  //     Vendor newVendor = new Vendor(name);
-
-  //     //Act
-  //     string result = newVendor.Name;
-
-  //     //Assert
-  //     Assert.AreEqual(name, result);
-  //   }
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      string name = "Margot's Marketplace";
+      string description = "Cafe and Market";
+      Vendor newVendor = new Vendor(name, description);
+      string result = newVendor.Name;
+      string result1 = newVendor.Description;
+      Assert.AreEqual(name, result);
+      Assert.AreEqual(description, result1);
+    }
 
   //   [TestMethod]
   //   public void GetId_ReturnsVendorId_Int()
